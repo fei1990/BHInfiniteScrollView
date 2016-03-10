@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BHInfiniteScrollView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "BHInfiniteScrollView is a infinite scroll view spport all direction"
 
   s.description  = <<-DESC

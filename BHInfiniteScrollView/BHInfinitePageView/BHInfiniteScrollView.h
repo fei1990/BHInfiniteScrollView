@@ -1,0 +1,109 @@
+//
+//  BHInfiniteScrollView.h
+//  BHInfiniteScrollView
+//
+//  Created by libohao on 16/3/6.
+//  Copyright © 2016年 libohao. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "BHInfiniteScrollViewTitleView.h"
+#import "FXPageControl.h"
+
+
+typedef enum : NSUInteger {
+    BHInfiniteScrollViewScrollDirectionHorizontal,
+    BHInfiniteScrollViewScrollDirectionVertical,
+} BHInfiniteScrollViewScrollDirection;
+
+typedef enum : NSUInteger {
+    BHInfiniteScrollViewPageControlAlignHorizontalCenter,
+    BHInfiniteScrollViewPageControlAlignHorizontalRight,
+    BHInfiniteScrollViewPageControlAlignHorizontalLeft,
+} BHInfiniteScrollViewPageControlAlignHorizontal;
+
+typedef enum : NSUInteger {
+    BHInfiniteScrollViewPageControlAlignVerticalCenter,
+    BHInfiniteScrollViewPageControlAlignVerticalTop,
+    BHInfiniteScrollViewPageControlAlignVerticalButtom,
+} BHInfiniteScrollViewPageControlAlignVertical;
+
+@class BHInfiniteScrollView;
+@protocol BHInfiniteScrollViewDelegate <NSObject>
+
+@optional
+
+/** 点击图片*/
+- (void)infiniteScrollView:(BHInfiniteScrollView *)infiniteScrollView didSelectItemAtIndex:(NSInteger)index;
+
+/** 图片滚动*/
+- (void)infiniteScrollView:(BHInfiniteScrollView *)infiniteScrollView didScrollToIndex:(NSInteger)index;
+
+@end
+
+
+@interface BHInfiniteScrollView : UIView
+
++ (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate ImagesArray:(NSArray *)images;
+
++ (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate
+                                ImagesArray:(NSArray *)images PlageHolderImage:(UIImage*)placeHolderImage;
+
+
+/** 图片数据源 */
+@property (nonatomic, copy) NSArray* imagesArray;
+
+/** 标题数据源 */
+@property (nonatomic, copy) NSArray* titlesArray;
+
+
+
+/** 轮播图Delegete */
+@property (nonatomic, assign) id<BHInfiniteScrollViewDelegate> delegate;
+
+/** 轮播图滚动方向 - 默认是水平方向 */
+@property (nonatomic, assign) BHInfiniteScrollViewScrollDirection scrollDirection;
+
+/** 轮播图反方向滚动 - 默认为NO */
+@property (nonatomic, assign) BOOL reverseDirection;
+
+/** PageControl 水平方向位置 - 默认是Center */
+@property (nonatomic, assign) BHInfiniteScrollViewPageControlAlignHorizontal pageControlAlignmentH;
+
+/** PageControl 垂直方向位置 - 默认是Buttom */
+@property (nonatomic, assign) BHInfiniteScrollViewPageControlAlignVertical pageControlAlignmentV;
+
+
+/** 轮播图位置偏移量 - 默认是(0,10) */
+@property (nonatomic, assign) CGSize pageControlAlignmentOffset;
+
+/** 轮播图是否自动滚动 - 默认是YES */
+@property (nonatomic, assign) BOOL autoScrollToNextPage;
+
+/** 轮播图滚动时间间隔 - 默认是3秒 */
+@property (nonatomic, assign) NSTimeInterval scrollTimeInterval;
+
+/** 获取轮播图当前的位置 */
+@property (nonatomic, assign, readonly) NSInteger currentPageIndex;
+
+/** 轮播图片占位图 */
+@property (nonatomic, strong) UIImage* placeholderImage;
+
+/** 轮播图片ContentMode - 默认为 UIViewContentModeScaleToFill */
+@property (nonatomic, assign) UIViewContentMode pageViewContentMode;
+
+/** 轮播图点控件 */
+@property (nonatomic, strong) FXPageControl* pageControl;
+
+/** 轮播图片点击回调 */
+@property (nonatomic, copy) void (^scrollViewDidSelectBlock)(BHInfiniteScrollView* infiniteScrollView , NSInteger index);
+
+
+/** 轮播图标题控件 */
+@property (nonatomic, strong) BHInfiniteScrollViewTitleView* titleView;
+
+/** 滚动到指定的页面 */
+- (void)scrollToPageAtIndex:(NSUInteger)pageIndex Animation:(BOOL)animation;
+
+
+@end

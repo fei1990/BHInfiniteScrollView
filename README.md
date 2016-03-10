@@ -1,5 +1,5 @@
 # BHInfiniteScrollView (QQ交流群:206177395)
-## IOS上功能最全的图片轮播库，支持图片左右滚动，上下滚动。
+## IOS上功能最全的图片轮播库，支持图片左右滚动，上下滚动。Page Control 支持自由定制
 
 ![image](screenshot.gif)
 

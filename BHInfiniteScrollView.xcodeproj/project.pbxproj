@@ -253,7 +253,6 @@
 				CEF977531C917DB600AD84F1 /* BHInfiniteScrollView.h */,
 				CEF977541C917DB600AD84F1 /* BHInfiniteScrollView.m */,
 				CEF977551C917DB600AD84F1 /* FXPageControl */,
-				CEF977581C917DB600AD84F1 /* TAPageControl */,
 				CEF977591C917DB600AD84F1 /* Views */,
 			);
 			path = BHInfiniteScrollView;
@@ -266,13 +265,6 @@
 				CEF977571C917DB600AD84F1 /* FXPageControl.m */,
 			);
 			path = FXPageControl;
-			sourceTree = "<group>";
-		};
-		CEF977581C917DB600AD84F1 /* TAPageControl */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TAPageControl;
 			sourceTree = "<group>";
 		};
 		CEF977591C917DB600AD84F1 /* Views */ = {

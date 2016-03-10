@@ -37,6 +37,24 @@ BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollVie
 
 BHInfiniteScrollView 使用 MIT 许可证，详情见 LICENSE 文件。
 
+## usage
+BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollViewWithFrame:frame Delegate:delegate ImagesArray:array];
+#array support ：url string，local image name string or UIImage。
+
+### BHInfiniteScrollViewScrollDirection
+    BHInfiniteScrollViewScrollDirectionHorizontal,                 /** horizontal scroll*/
+    BHInfiniteScrollViewScrollDirectionVertical,                   /** vertical scroll*/
+  
+###Page Control horizontal layout BHInfiniteScrollViewPageControlAlignHorizontal
+    BHInfiniteScrollViewPageControlAlignHorizontalCenter,          /** page control layout horizontal center*/
+    BHInfiniteScrollViewPageControlAlignHorizontalRight,           /** page control layout horizontalRight*/
+    BHInfiniteScrollViewPageControlAlignHorizontalLeft,            /** page control layout horizontalLeft*/
+    
+###Page Control vertical layout BHInfiniteScrollViewPageControlAlignVertical
+    BHInfiniteScrollViewPageControlAlignVerticalCenter,            /** page control layout verticalcenter*/
+    BHInfiniteScrollViewPageControlAlignVerticalTop,               /** page control layout verticalTop*/
+    BHInfiniteScrollViewPageControlAlignVerticalButtom,            /** page control layout verticalButtom*/
+
 # CocoaPods
 
 1. Add `pod 'BHInfiniteScrollView'` to your Podfile.

@@ -5,7 +5,7 @@
 
 ##使用方法方便简单
 
-BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollViewWithFrame:frame Delegate:delegate ImagesArray:图片数组];
+###BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollViewWithFrame:frame Delegate:delegate ImagesArray:图片数组];
 #其中图片数组同时支持：网络连接，本地图片名字或者UIImage。
 
 ###滚动方向 BHInfiniteScrollViewScrollDirection

@@ -15,8 +15,6 @@
 		CE740C821C8E789A002AAEDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE740C801C8E789A002AAEDB /* LaunchScreen.storyboard */; };
 		CE740C8D1C8E789A002AAEDB /* BHInfiniteScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740C8C1C8E789A002AAEDB /* BHInfiniteScrollViewTests.m */; };
 		CE740C981C8E789A002AAEDB /* BHInfiniteScrollViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740C971C8E789A002AAEDB /* BHInfiniteScrollViewUITests.m */; };
-		CE740CB01C8E7921002AAEDB /* BHInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740CA71C8E7921002AAEDB /* BHInfiniteScrollView.m */; };
-		CE740CB31C8E7921002AAEDB /* FXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740CAE1C8E7921002AAEDB /* FXPageControl.m */; };
 		CE740CD51C8E796A002AAEDB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CE740CB51C8E7969002AAEDB /* LICENSE */; };
 		CE740CD61C8E796A002AAEDB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CE740CB61C8E7969002AAEDB /* README.md */; };
 		CE740CD71C8E796A002AAEDB /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740CB91C8E7969002AAEDB /* NSData+ImageContentType.m */; };
@@ -33,8 +31,10 @@
 		CE740CE21C8E796A002AAEDB /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740CD01C8E796A002AAEDB /* UIImageView+HighlightedWebCache.m */; };
 		CE740CE31C8E796A002AAEDB /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740CD21C8E796A002AAEDB /* UIImageView+WebCache.m */; };
 		CE740CE41C8E796A002AAEDB /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740CD41C8E796A002AAEDB /* UIView+WebCacheOperation.m */; };
-		CE740CEB1C8E79FA002AAEDB /* BHInfiniteScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740CE81C8E79FA002AAEDB /* BHInfiniteScrollViewCell.m */; };
-		CE740CEC1C8E79FA002AAEDB /* BHInfiniteScrollViewTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE740CEA1C8E79FA002AAEDB /* BHInfiniteScrollViewTitleView.m */; };
+		CEF9775E1C917DB600AD84F1 /* BHInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF977541C917DB600AD84F1 /* BHInfiniteScrollView.m */; };
+		CEF9775F1C917DB600AD84F1 /* FXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF977571C917DB600AD84F1 /* FXPageControl.m */; };
+		CEF977601C917DB600AD84F1 /* BHInfiniteScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF9775B1C917DB600AD84F1 /* BHInfiniteScrollViewCell.m */; };
+		CEF977611C917DB600AD84F1 /* BHInfiniteScrollViewTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF9775D1C917DB600AD84F1 /* BHInfiniteScrollViewTitleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,10 +71,6 @@
 		CE740C931C8E789A002AAEDB /* BHInfiniteScrollViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BHInfiniteScrollViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE740C971C8E789A002AAEDB /* BHInfiniteScrollViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollViewUITests.m; sourceTree = "<group>"; };
 		CE740C991C8E789A002AAEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE740CA61C8E7921002AAEDB /* BHInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollView.h; sourceTree = "<group>"; };
-		CE740CA71C8E7921002AAEDB /* BHInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollView.m; sourceTree = "<group>"; };
-		CE740CAD1C8E7921002AAEDB /* FXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPageControl.h; sourceTree = "<group>"; };
-		CE740CAE1C8E7921002AAEDB /* FXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPageControl.m; sourceTree = "<group>"; };
 		CE740CB51C8E7969002AAEDB /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CE740CB61C8E7969002AAEDB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE740CB81C8E7969002AAEDB /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -106,10 +102,14 @@
 		CE740CD21C8E796A002AAEDB /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		CE740CD31C8E796A002AAEDB /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CE740CD41C8E796A002AAEDB /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		CE740CE71C8E79FA002AAEDB /* BHInfiniteScrollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollViewCell.h; sourceTree = "<group>"; };
-		CE740CE81C8E79FA002AAEDB /* BHInfiniteScrollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollViewCell.m; sourceTree = "<group>"; };
-		CE740CE91C8E79FA002AAEDB /* BHInfiniteScrollViewTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollViewTitleView.h; sourceTree = "<group>"; };
-		CE740CEA1C8E79FA002AAEDB /* BHInfiniteScrollViewTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollViewTitleView.m; sourceTree = "<group>"; };
+		CEF977531C917DB600AD84F1 /* BHInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollView.h; sourceTree = "<group>"; };
+		CEF977541C917DB600AD84F1 /* BHInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollView.m; sourceTree = "<group>"; };
+		CEF977561C917DB600AD84F1 /* FXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPageControl.h; sourceTree = "<group>"; };
+		CEF977571C917DB600AD84F1 /* FXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPageControl.m; sourceTree = "<group>"; };
+		CEF9775A1C917DB600AD84F1 /* BHInfiniteScrollViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollViewCell.h; sourceTree = "<group>"; };
+		CEF9775B1C917DB600AD84F1 /* BHInfiniteScrollViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollViewCell.m; sourceTree = "<group>"; };
+		CEF9775C1C917DB600AD84F1 /* BHInfiniteScrollViewTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHInfiniteScrollViewTitleView.h; sourceTree = "<group>"; };
+		CEF9775D1C917DB600AD84F1 /* BHInfiniteScrollViewTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHInfiniteScrollViewTitleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +160,8 @@
 		CE740C711C8E789A002AAEDB /* BHInfiniteScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				CEF977521C917DB600AD84F1 /* BHInfiniteScrollView */,
 				CE740CB41C8E7969002AAEDB /* SDWebImage */,
-				CE740CA51C8E7921002AAEDB /* BHInfinitePageView */,
 				CE740C751C8E789A002AAEDB /* AppDelegate.h */,
 				CE740C761C8E789A002AAEDB /* AppDelegate.m */,
 				CE740C781C8E789A002AAEDB /* ViewController.h */,
@@ -199,26 +199,6 @@
 				CE740C991C8E789A002AAEDB /* Info.plist */,
 			);
 			path = BHInfiniteScrollViewUITests;
-			sourceTree = "<group>";
-		};
-		CE740CA51C8E7921002AAEDB /* BHInfinitePageView */ = {
-			isa = PBXGroup;
-			children = (
-				CE740CAC1C8E7921002AAEDB /* FXPageControl */,
-				CE740CE61C8E79FA002AAEDB /* Views */,
-				CE740CA61C8E7921002AAEDB /* BHInfiniteScrollView.h */,
-				CE740CA71C8E7921002AAEDB /* BHInfiniteScrollView.m */,
-			);
-			path = BHInfinitePageView;
-			sourceTree = "<group>";
-		};
-		CE740CAC1C8E7921002AAEDB /* FXPageControl */ = {
-			isa = PBXGroup;
-			children = (
-				CE740CAD1C8E7921002AAEDB /* FXPageControl.h */,
-				CE740CAE1C8E7921002AAEDB /* FXPageControl.m */,
-			);
-			path = FXPageControl;
 			sourceTree = "<group>";
 		};
 		CE740CB41C8E7969002AAEDB /* SDWebImage */ = {
@@ -267,13 +247,41 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		CE740CE61C8E79FA002AAEDB /* Views */ = {
+		CEF977521C917DB600AD84F1 /* BHInfiniteScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				CE740CE71C8E79FA002AAEDB /* BHInfiniteScrollViewCell.h */,
-				CE740CE81C8E79FA002AAEDB /* BHInfiniteScrollViewCell.m */,
-				CE740CE91C8E79FA002AAEDB /* BHInfiniteScrollViewTitleView.h */,
-				CE740CEA1C8E79FA002AAEDB /* BHInfiniteScrollViewTitleView.m */,
+				CEF977531C917DB600AD84F1 /* BHInfiniteScrollView.h */,
+				CEF977541C917DB600AD84F1 /* BHInfiniteScrollView.m */,
+				CEF977551C917DB600AD84F1 /* FXPageControl */,
+				CEF977581C917DB600AD84F1 /* TAPageControl */,
+				CEF977591C917DB600AD84F1 /* Views */,
+			);
+			path = BHInfiniteScrollView;
+			sourceTree = "<group>";
+		};
+		CEF977551C917DB600AD84F1 /* FXPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				CEF977561C917DB600AD84F1 /* FXPageControl.h */,
+				CEF977571C917DB600AD84F1 /* FXPageControl.m */,
+			);
+			path = FXPageControl;
+			sourceTree = "<group>";
+		};
+		CEF977581C917DB600AD84F1 /* TAPageControl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TAPageControl;
+			sourceTree = "<group>";
+		};
+		CEF977591C917DB600AD84F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEF9775A1C917DB600AD84F1 /* BHInfiniteScrollViewCell.h */,
+				CEF9775B1C917DB600AD84F1 /* BHInfiniteScrollViewCell.m */,
+				CEF9775C1C917DB600AD84F1 /* BHInfiniteScrollViewTitleView.h */,
+				CEF9775D1C917DB600AD84F1 /* BHInfiniteScrollViewTitleView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -410,24 +418,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF9775E1C917DB600AD84F1 /* BHInfiniteScrollView.m in Sources */,
 				CE740CE01C8E796A002AAEDB /* UIImage+GIF.m in Sources */,
 				CE740CD91C8E796A002AAEDB /* SDWebImageCompat.m in Sources */,
 				CE740CDF1C8E796A002AAEDB /* UIButton+WebCache.m in Sources */,
 				CE740CE11C8E796A002AAEDB /* UIImage+MultiFormat.m in Sources */,
 				CE740CE41C8E796A002AAEDB /* UIView+WebCacheOperation.m in Sources */,
 				CE740CDE1C8E796A002AAEDB /* SDWebImagePrefetcher.m in Sources */,
+				CEF977601C917DB600AD84F1 /* BHInfiniteScrollViewCell.m in Sources */,
 				CE740C7A1C8E789A002AAEDB /* ViewController.m in Sources */,
-				CE740CEB1C8E79FA002AAEDB /* BHInfiniteScrollViewCell.m in Sources */,
-				CE740CB31C8E7921002AAEDB /* FXPageControl.m in Sources */,
 				CE740C771C8E789A002AAEDB /* AppDelegate.m in Sources */,
 				CE740CDC1C8E796A002AAEDB /* SDWebImageDownloaderOperation.m in Sources */,
-				CE740CEC1C8E79FA002AAEDB /* BHInfiniteScrollViewTitleView.m in Sources */,
+				CEF977611C917DB600AD84F1 /* BHInfiniteScrollViewTitleView.m in Sources */,
+				CEF9775F1C917DB600AD84F1 /* FXPageControl.m in Sources */,
 				CE740CDA1C8E796A002AAEDB /* SDWebImageDecoder.m in Sources */,
 				CE740C741C8E789A002AAEDB /* main.m in Sources */,
 				CE740CE31C8E796A002AAEDB /* UIImageView+WebCache.m in Sources */,
 				CE740CD71C8E796A002AAEDB /* NSData+ImageContentType.m in Sources */,
 				CE740CDB1C8E796A002AAEDB /* SDWebImageDownloader.m in Sources */,
-				CE740CB01C8E7921002AAEDB /* BHInfiniteScrollView.m in Sources */,
 				CE740CD61C8E796A002AAEDB /* README.md in Sources */,
 				CE740CDD1C8E796A002AAEDB /* SDWebImageManager.m in Sources */,
 				CE740CE21C8E796A002AAEDB /* UIImageView+HighlightedWebCache.m in Sources */,

@@ -8,21 +8,21 @@
 BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollViewWithFrame:frame Delegate:delegate ImagesArray:图片数组];
 #其中图片数组同时支持：网络连接，本地图片名字或者UIImage。
 
-滚动方向 BHInfiniteScrollViewScrollDirection
+###滚动方向 BHInfiniteScrollViewScrollDirection
     BHInfiniteScrollViewScrollDirectionHorizontal,                 /** 水平滚动*/
     BHInfiniteScrollViewScrollDirectionVertical,                   /** 垂直滚动*/
-    
-Page Control 水平方向布局 BHInfiniteScrollViewPageControlAlignHorizontal
+  
+###Page Control 水平方向布局 BHInfiniteScrollViewPageControlAlignHorizontal
     BHInfiniteScrollViewPageControlAlignHorizontalCenter,          /** page control 布局 水平居中*/
     BHInfiniteScrollViewPageControlAlignHorizontalRight,           /** page control 布局 水平靠右*/
     BHInfiniteScrollViewPageControlAlignHorizontalLeft,            /** page control 布局 水平靠左*/
     
-Page Control 垂直方向布局 BHInfiniteScrollViewPageControlAlignVertical
+###Page Control 垂直方向布局 BHInfiniteScrollViewPageControlAlignVertical
     BHInfiniteScrollViewPageControlAlignVerticalCenter,            /** page control 布局 垂直居中*/
     BHInfiniteScrollViewPageControlAlignVerticalTop,               /** page control 布局 垂直靠上*/
     BHInfiniteScrollViewPageControlAlignVerticalButtom,            /** page control 布局 垂直靠底*/
     
-
+    
 # 安装
 
 1. 在 `Podfile` 中添加 `pod 'BHInfiniteScrollView'`。

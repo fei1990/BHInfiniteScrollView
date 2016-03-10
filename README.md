@@ -32,4 +32,4 @@ BHInfiniteScrollView is provided under the MIT license. See LICENSE file for det
 
 # 许可证
 
-TagView 使用 MIT 许可证，详情见 LICENSE 文件。
+BHInfiniteScrollView 使用 MIT 许可证，详情见 LICENSE 文件。

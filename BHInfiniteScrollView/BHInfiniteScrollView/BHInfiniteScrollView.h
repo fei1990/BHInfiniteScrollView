@@ -22,23 +22,22 @@
 #import "BHInfiniteScrollViewTitleView.h"
 #import "FXPageControl.h"
 
-
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSInteger, BHInfiniteScrollViewScrollDirection) {
     BHInfiniteScrollViewScrollDirectionHorizontal,                 /** 水平滚动*/
     BHInfiniteScrollViewScrollDirectionVertical,                   /** 垂直滚动*/
-} BHInfiniteScrollViewScrollDirection;
+};
 
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignHorizontal) {
     BHInfiniteScrollViewPageControlAlignHorizontalCenter,          /** page control 布局 水平居中*/
     BHInfiniteScrollViewPageControlAlignHorizontalRight,           /** page control 布局 水平靠右*/
     BHInfiniteScrollViewPageControlAlignHorizontalLeft,            /** page control 布局 水平靠左*/
-} BHInfiniteScrollViewPageControlAlignHorizontal;
+};
 
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
     BHInfiniteScrollViewPageControlAlignVerticalCenter,            /** page control 布局 垂直居中*/
     BHInfiniteScrollViewPageControlAlignVerticalTop,               /** page control 布局 垂直靠上*/
     BHInfiniteScrollViewPageControlAlignVerticalButtom,            /** page control 布局 垂直靠底*/
-} BHInfiniteScrollViewPageControlAlignVertical;
+};
 
 @class BHInfiniteScrollView;
 @protocol BHInfiniteScrollViewDelegate <NSObject>
@@ -63,10 +62,10 @@ typedef enum : NSUInteger {
 
 
 /** 图片数据源 */
-@property (nonatomic, copy) NSArray* imagesArray;
+@property (nonatomic, copy) NSArray *imagesArray;
 
 /** 标题数据源 */
-@property (nonatomic, copy) NSArray* titlesArray;
+@property (nonatomic, copy) NSArray *titlesArray;
 
 
 

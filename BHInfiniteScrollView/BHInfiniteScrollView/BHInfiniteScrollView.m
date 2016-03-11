@@ -24,11 +24,9 @@
 {
     NSInteger _multiple;
     NSInteger _totalPageCount;
-    BHInfiniteScrollViewCell* _currentCell;
-    
 }
-@property (nonatomic, strong) UICollectionView* collectionView;
-@property (nonatomic, strong) UICollectionViewFlowLayout* flowLayout;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, weak) NSTimer *timer;
 
 
@@ -384,7 +382,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     BHInfiniteScrollViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:BHInfiniteScrollViewCellIdentifier forIndexPath:indexPath];
     cell.contentMode = self.pageViewContentMode;
-    _currentCell = cell;
     if (self.imagesArray.count) {
         NSInteger index = indexPath.row % self.imagesArray.count;
         NSObject* object = [self.imagesArray objectAtIndex:index];

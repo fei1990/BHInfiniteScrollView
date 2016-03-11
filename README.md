@@ -1,5 +1,5 @@
 # BHInfiniteScrollView (QQ交流群:206177395)
-## IOS上功能最全的图片轮播库，支持图片左右滚动，上下滚动。
+## IOS上功能最全的图片轮播库，支持图片左右滚动，上下滚动。Page Control 支持自由定制
 
 ![image](screenshot.gif)
 
@@ -11,7 +11,10 @@
 ###滚动方向 BHInfiniteScrollViewScrollDirection
     BHInfiniteScrollViewScrollDirectionHorizontal,                 /** 水平滚动*/
     BHInfiniteScrollViewScrollDirectionVertical,                   /** 垂直滚动*/
-  
+    
+### 反向滚动 reverseDirection
+    @property (nonatomic, assign) BOOL reverseDirection;
+
 ###Page Control 水平方向布局 BHInfiniteScrollViewPageControlAlignHorizontal
     BHInfiniteScrollViewPageControlAlignHorizontalCenter,          /** page control 布局 水平居中*/
     BHInfiniteScrollViewPageControlAlignHorizontalRight,           /** page control 布局 水平靠右*/
@@ -44,7 +47,10 @@ BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollVie
 ### BHInfiniteScrollViewScrollDirection
     BHInfiniteScrollViewScrollDirectionHorizontal,                 /** horizontal scroll*/
     BHInfiniteScrollViewScrollDirectionVertical,                   /** vertical scroll*/
-  
+    
+### reverseDirection
+    @property (nonatomic, assign) BOOL reverseDirection;
+    
 ###Page Control horizontal layout BHInfiniteScrollViewPageControlAlignHorizontal
     BHInfiniteScrollViewPageControlAlignHorizontalCenter,          /** page control layout horizontal center*/
     BHInfiniteScrollViewPageControlAlignHorizontalRight,           /** page control layout horizontalRight*/

@@ -3,6 +3,9 @@
 
 ![image](screenshot.gif)
 
+## 持续更新，欢迎⭐️star⭐️ 
+## TODO : 支持滚动时间间隔，等。欢迎提出你的意见建议
+
 ##使用方法方便简单
 
 ###BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollViewWithFrame:frame Delegate:delegate ImagesArray:图片数组];

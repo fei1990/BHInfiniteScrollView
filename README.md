@@ -29,7 +29,7 @@
 # 安装
 
 1. 在 `Podfile` 中添加 `pod 'BHInfiniteScrollView'`。
-2. 执行 `pod install` 或 `pod update`。
+2. 执行 `pod install` 或 `pod update`。注意:如果遇到"Unable to find a pod with name matching"错误,需要先 'pod setup' 更新缓存
 3. 导入 `<BHInfiniteScrollView/BHInfiniteScrollView.h>`。
 
 # 要求

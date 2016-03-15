@@ -97,7 +97,7 @@
 }
 
 - (void)initialize {
-    _multiple = 1000;
+    _multiple = 10000;
     _scrollTimeInterval = 3.2;
     _autoScrollToNextPage = YES;
     _scrollDirection = BHInfiniteScrollViewScrollDirectionHorizontal;

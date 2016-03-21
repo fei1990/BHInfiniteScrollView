@@ -26,7 +26,7 @@
     NSInteger _totalPageCount;
 }
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
+@property (nonatomic, weak) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, weak) NSTimer *timer;
 
 
@@ -92,8 +92,18 @@
     
 }
 
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    if (!newSuperview) {
+        [self resetTimer];
+    }
+}
+
 - (void)dealloc {
     [self resetTimer];
+    self.collectionView.delegate = nil;
+    self.collectionView.dataSource = nil;
+    
 }
 
 - (void)initialize {

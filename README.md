@@ -1,5 +1,5 @@
 # BHInfiniteScrollView (QQ交流群:206177395)
-## IOS上功能最全的图片轮播库，支持图片左右滚动，上下滚动。Page Control 支持自由定制
+## IOS上功能最全的图片轮播库，支持图片左右滚动，上下滚动。Page Control 支持方向布局,并且支持自由定制
 
 ![image](screenshot.gif)
 
@@ -28,7 +28,9 @@
     BHInfiniteScrollViewPageControlAlignVerticalTop,               /** page control 布局 垂直靠上*/
     BHInfiniteScrollViewPageControlAlignVerticalButtom,            /** page control 布局 垂直靠底*/
     
-    
+### 轮播图是否无限循环滚动
+    @property (nonatomic, assign) BOOL infiniteLoop;
+
 # 安装
 
 1. 在 `Podfile` 中添加 `pod 'BHInfiniteScrollView'`。
@@ -53,7 +55,7 @@ BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollVie
     
 ### reverseDirection
     @property (nonatomic, assign) BOOL reverseDirection;
-    
+
 ###Page Control horizontal layout BHInfiniteScrollViewPageControlAlignHorizontal
     BHInfiniteScrollViewPageControlAlignHorizontalCenter,          /** page control layout horizontal center*/
     BHInfiniteScrollViewPageControlAlignHorizontalRight,           /** page control layout horizontalRight*/
@@ -64,6 +66,8 @@ BHInfiniteScrollView* infinitePageView = [BHInfiniteScrollView infiniteScrollVie
     BHInfiniteScrollViewPageControlAlignVerticalTop,               /** page control layout verticalTop*/
     BHInfiniteScrollViewPageControlAlignVerticalButtom,            /** page control layout verticalButtom*/
 
+### infiniteLoop
+    @property (nonatomic, assign) BOOL infiniteLoop;
 # CocoaPods
 
 1. Add `pod 'BHInfiniteScrollView'` to your Podfile.

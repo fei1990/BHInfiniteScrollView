@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BHInfiniteScrollView"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "BHInfiniteScrollView is a infinite scroll view spport all direction"
 
   s.description  = <<-DESC
@@ -74,7 +74,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/qylibohao/BHInfiniteScrollView.git", :tag => "1.1.0" }
+  s.source       = { :git => "https://github.com/qylibohao/BHInfiniteScrollView.git", :tag => "1.1.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

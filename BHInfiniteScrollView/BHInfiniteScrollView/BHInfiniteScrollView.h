@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
 + (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate
                                 ImagesArray:(NSArray *)images PlageHolderImage:(UIImage*)placeHolderImage;
 
-+ (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate ImagesArray:(NSArray *)images InfiniteLoop:(BOOL)loop;
++ (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate ImagesArray:(NSArray *)images PlageHolderImage:(UIImage*)placeHolderImage InfiniteLoop:(BOOL)loop;
 
 /** 图片数据源 */
 @property (nonatomic, copy) NSArray *imagesArray;

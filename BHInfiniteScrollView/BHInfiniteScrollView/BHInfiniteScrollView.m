@@ -50,10 +50,8 @@
     return infiniteScrollView;
 }
 
-+ (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate ImagesArray:(NSArray *)images InfiniteLoop:(BOOL)loop {
-    BHInfiniteScrollView *infiniteScrollView = [[self alloc] initWithFrame:frame];
-    infiniteScrollView.delegate = delegate;
-    infiniteScrollView.imagesArray = [NSMutableArray arrayWithArray:images];
++ (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate ImagesArray:(NSArray *)images PlageHolderImage:(UIImage*)placeHolderImage InfiniteLoop:(BOOL)loop {
+    BHInfiniteScrollView *infiniteScrollView = [BHInfiniteScrollView infiniteScrollViewWithFrame:frame Delegate:delegate ImagesArray:images PlageHolderImage:placeHolderImage];
     infiniteScrollView.infiniteLoop = loop;
     return infiniteScrollView;
 }

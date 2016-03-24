@@ -91,6 +91,10 @@ typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
 /** 轮播图是否自动滚动 - 默认是YES */
 @property (nonatomic, assign) BOOL autoScrollToNextPage;
 
+
+@property (nonatomic, assign) BOOL infiniteLoop;
+
+
 /** 轮播图滚动时间间隔 - 默认是3秒 */
 @property (nonatomic, assign) NSTimeInterval scrollTimeInterval;
 

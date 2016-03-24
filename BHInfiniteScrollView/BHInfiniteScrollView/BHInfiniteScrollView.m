@@ -78,7 +78,7 @@
     [self updateTitleView];
     
     //scroll to middle postion
-    if (self.imagesArray.count) {
+    if (self.imagesArray.count && self.infiniteLoop) {
         if (self.scrollDirection == BHInfiniteScrollViewScrollDirectionHorizontal) {
             CGFloat middlePageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
             [self.collectionView scrollRectToVisible:CGRectMake(middlePageX,0, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
@@ -113,7 +113,8 @@
     _scrollDirection = BHInfiniteScrollViewScrollDirectionHorizontal;
     _reverseDirection = NO;
     _pageViewContentMode = UIViewContentModeScaleAspectFill;
-
+    _infiniteLoop = YES;
+    
     _pageControlAlignmentH =  BHInfiniteScrollViewPageControlAlignHorizontalCenter;
     _pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalButtom;
     
@@ -208,7 +209,11 @@
 
 - (void)setImagesArray:(NSArray *)imageUrlsArray {
     _imagesArray = imageUrlsArray;
-    _totalPageCount = imageUrlsArray.count * _multiple * 2;
+    if (self.infiniteLoop) {
+        _totalPageCount = imageUrlsArray.count * _multiple * 2;
+    }else {
+        _totalPageCount = imageUrlsArray.count;
+    }
     
     if (imageUrlsArray.count > 1) {
         self.collectionView.scrollEnabled = YES;
@@ -277,16 +282,22 @@
             CGFloat nextPageX ;
             if (self.reverseDirection) {
                 nextPageX = self.collectionView.contentOffset.x - _flowLayout.itemSize.width;
-                if (nextPageX < 0) {
-                    nextPageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
-                    hasScrollAnimation = NO;
+                if (self.infiniteLoop) {
+                    if (nextPageX < 0) {
+                        nextPageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
+                        hasScrollAnimation = NO;
+                    }
                 }
+                
             }else {
                 nextPageX = self.collectionView.contentOffset.x + _flowLayout.itemSize.width;
-                if (nextPageX > _flowLayout.itemSize.width * self.imagesArray.count * _multiple * 2) {
-                    nextPageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
-                    hasScrollAnimation = NO;
+                if (self.infiniteLoop) {
+                    if (nextPageX > _flowLayout.itemSize.width * self.imagesArray.count * _multiple * 2) {
+                        nextPageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
+                        hasScrollAnimation = NO;
+                    }
                 }
+                
             }
             
             NSIndexPath* indexPath = [self.collectionView indexPathForItemAtPoint:CGPointMake(nextPageX,_flowLayout.itemSize.height * 0.5)];
@@ -296,16 +307,22 @@
             CGFloat nextPageY ;
             if (self.reverseDirection) {
                 nextPageY = self.collectionView.contentOffset.y - _flowLayout.itemSize.height;
-                if (nextPageY < 0) {
-                    nextPageY = _flowLayout.itemSize.height * self.imagesArray.count * _multiple;
-                    hasScrollAnimation = NO;
+                if (self.infiniteLoop) {
+                    if (nextPageY < 0) {
+                        nextPageY = _flowLayout.itemSize.height * self.imagesArray.count * _multiple;
+                        hasScrollAnimation = NO;
+                    }
                 }
+                
             }else {
                 nextPageY = self.collectionView.contentOffset.y + _flowLayout.itemSize.height;
-                if (nextPageY > _flowLayout.itemSize.height * self.imagesArray.count * _multiple * 2) {
-                    nextPageY = _flowLayout.itemSize.height * self.imagesArray.count * _multiple;
-                    hasScrollAnimation = NO;
+                if (self.infiniteLoop) {
+                    if (nextPageY > _flowLayout.itemSize.height * self.imagesArray.count * _multiple * 2) {
+                        nextPageY = _flowLayout.itemSize.height * self.imagesArray.count * _multiple;
+                        hasScrollAnimation = NO;
+                    }
                 }
+                
             }
             
             NSIndexPath* indexPath = [self.collectionView indexPathForItemAtPoint:CGPointMake(_flowLayout.itemSize.width * 0.5, nextPageY)];
@@ -318,7 +335,11 @@
     if(self.imagesArray.count == 0 ) return;
     
     if (pageIndex < self.imagesArray.count) {
-        NSInteger middleNum =  _multiple * self.imagesArray.count;
+        NSInteger middleNum = 0;
+        if (self.infiniteLoop) {
+            middleNum =  _multiple * self.imagesArray.count;
+        }
+        
         
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:middleNum + pageIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:animation];
         
@@ -432,6 +453,9 @@
     if (self.autoScrollToNextPage) {
         [self setupTimer];
     }
+    
+    self.pageControl.currentPage = self.currentPageIndex;
+
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

@@ -50,6 +50,15 @@
     return infiniteScrollView;
 }
 
++ (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate ImagesArray:(NSArray *)images InfiniteLoop:(BOOL)loop {
+    BHInfiniteScrollView *infiniteScrollView = [[self alloc] initWithFrame:frame];
+    infiniteScrollView.delegate = delegate;
+    infiniteScrollView.infiniteLoop = loop;
+    infiniteScrollView.imagesArray = [NSMutableArray arrayWithArray:images];
+    return infiniteScrollView;
+}
+
+
 #pragma mark - Life Cycle
 
 - (id)initWithFrame:(CGRect)frame {
@@ -258,6 +267,16 @@
     }
 }
 
+- (void)setInfiniteLoop:(BOOL)infiniteLoop {
+    _infiniteLoop = infiniteLoop;
+    
+    if (self.infiniteLoop) {
+        _totalPageCount = self.imagesArray.count * _multiple * 2;
+    }else {
+        _totalPageCount = self.imagesArray.count;
+    }
+    
+}
 #pragma mark - timer func
 
 - (void)setupTimer {

@@ -60,6 +60,7 @@ typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
 + (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate
                                 ImagesArray:(NSArray *)images PlageHolderImage:(UIImage*)placeHolderImage;
 
++ (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate ImagesArray:(NSArray *)images InfiniteLoop:(BOOL)loop;
 
 /** 图片数据源 */
 @property (nonatomic, copy) NSArray *imagesArray;
@@ -85,13 +86,13 @@ typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
 @property (nonatomic, assign) BHInfiniteScrollViewPageControlAlignVertical pageControlAlignmentV;
 
 
-/** 轮播图位置偏移量 - 默认是(0,10) */
+/** PageControl 位置偏移量 - 默认是(0,10) */
 @property (nonatomic, assign) CGSize pageControlAlignmentOffset;
 
 /** 轮播图是否自动滚动 - 默认是YES */
 @property (nonatomic, assign) BOOL autoScrollToNextPage;
 
-
+/** 轮播图是否无限循环滚动 - 默认是YES */
 @property (nonatomic, assign) BOOL infiniteLoop;
 
 

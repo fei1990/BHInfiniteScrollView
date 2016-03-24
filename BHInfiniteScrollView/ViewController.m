@@ -53,45 +53,45 @@
     
     CGFloat viewHeight = [UIScreen mainScreen].bounds.size.height/4;
     
-    BHInfiniteScrollView* infinitePageView1 = [BHInfiniteScrollView
-                                              infiniteScrollViewWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), viewHeight) Delegate:self ImagesArray:urlsArray];
-    infinitePageView1.titlesArray = titlesArray;
-    infinitePageView1.pageControl.dotSize = 10;
-    infinitePageView1.pageControlAlignmentOffset = CGSizeMake(0, 20);
-    infinitePageView1.titleView.textColor = [UIColor whiteColor];
-    infinitePageView1.titleView.margin = 30;
-    infinitePageView1.titleView.hidden = YES;
-    infinitePageView1.scrollTimeInterval = 2;
-    infinitePageView1.autoScrollToNextPage = YES;
-    infinitePageView1.delegate = self;
-    [self.view addSubview:infinitePageView1];
-    
-    
-    
-    BHInfiniteScrollView* infinitePageView2 = [BHInfiniteScrollView
-                                               infiniteScrollViewWithFrame:CGRectMake(0, viewHeight, CGRectGetWidth(self.view.frame), viewHeight) Delegate:self ImagesArray:urlsArray];
-    infinitePageView2.titlesArray = titlesArray;
-    infinitePageView2.pageControl.dotSize = 10;
-    infinitePageView2.pageControlAlignmentOffset = CGSizeMake(0,10);
-    infinitePageView2.scrollTimeInterval = 2;
-    infinitePageView2.autoScrollToNextPage = YES;
-    infinitePageView2.scrollDirection = BHInfiniteScrollViewScrollDirectionHorizontal;
-    infinitePageView2.pageControlAlignmentH = BHInfiniteScrollViewPageControlAlignHorizontalRight;
-    infinitePageView2.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalButtom;
-    infinitePageView2.reverseDirection = YES;
-    [self.view addSubview:infinitePageView2];
-    
-    BHInfiniteScrollView* infinitePageView3 = [BHInfiniteScrollView
-                                               infiniteScrollViewWithFrame:CGRectMake(0, viewHeight*2, CGRectGetWidth(self.view.frame), viewHeight) Delegate:self ImagesArray:urlsArray];
-    infinitePageView3.pageControl.dotSize = 10;
-    infinitePageView3.pageControlAlignmentOffset = CGSizeMake(10,0);
-    infinitePageView3.scrollTimeInterval = 2;
-    infinitePageView3.autoScrollToNextPage = YES;
-    infinitePageView3.scrollDirection = BHInfiniteScrollViewScrollDirectionVertical;
-    infinitePageView3.pageControlAlignmentH = BHInfiniteScrollViewPageControlAlignHorizontalRight;
-    infinitePageView3.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalButtom;
-    infinitePageView3.reverseDirection = NO;
-    [self.view addSubview:infinitePageView3];
+//    BHInfiniteScrollView* infinitePageView1 = [BHInfiniteScrollView
+//                                              infiniteScrollViewWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), viewHeight) Delegate:self ImagesArray:urlsArray];
+//    infinitePageView1.titlesArray = titlesArray;
+//    infinitePageView1.pageControl.dotSize = 10;
+//    infinitePageView1.pageControlAlignmentOffset = CGSizeMake(0, 20);
+//    infinitePageView1.titleView.textColor = [UIColor whiteColor];
+//    infinitePageView1.titleView.margin = 30;
+//    infinitePageView1.titleView.hidden = YES;
+//    infinitePageView1.scrollTimeInterval = 2;
+//    infinitePageView1.autoScrollToNextPage = YES;
+//    infinitePageView1.delegate = self;
+//    [self.view addSubview:infinitePageView1];
+//    
+//    
+//    
+//    BHInfiniteScrollView* infinitePageView2 = [BHInfiniteScrollView
+//                                               infiniteScrollViewWithFrame:CGRectMake(0, viewHeight, CGRectGetWidth(self.view.frame), viewHeight) Delegate:self ImagesArray:urlsArray];
+//    infinitePageView2.titlesArray = titlesArray;
+//    infinitePageView2.pageControl.dotSize = 10;
+//    infinitePageView2.pageControlAlignmentOffset = CGSizeMake(0,10);
+//    infinitePageView2.scrollTimeInterval = 2;
+//    infinitePageView2.autoScrollToNextPage = YES;
+//    infinitePageView2.scrollDirection = BHInfiniteScrollViewScrollDirectionHorizontal;
+//    infinitePageView2.pageControlAlignmentH = BHInfiniteScrollViewPageControlAlignHorizontalRight;
+//    infinitePageView2.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalButtom;
+//    infinitePageView2.reverseDirection = YES;
+//    [self.view addSubview:infinitePageView2];
+//    
+//    BHInfiniteScrollView* infinitePageView3 = [BHInfiniteScrollView
+//                                               infiniteScrollViewWithFrame:CGRectMake(0, viewHeight*2, CGRectGetWidth(self.view.frame), viewHeight) Delegate:self ImagesArray:urlsArray];
+//    infinitePageView3.pageControl.dotSize = 10;
+//    infinitePageView3.pageControlAlignmentOffset = CGSizeMake(10,0);
+//    infinitePageView3.scrollTimeInterval = 2;
+//    infinitePageView3.autoScrollToNextPage = YES;
+//    infinitePageView3.scrollDirection = BHInfiniteScrollViewScrollDirectionVertical;
+//    infinitePageView3.pageControlAlignmentH = BHInfiniteScrollViewPageControlAlignHorizontalRight;
+//    infinitePageView3.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalButtom;
+//    infinitePageView3.reverseDirection = NO;
+//    [self.view addSubview:infinitePageView3];
     
     
     BHInfiniteScrollView* infinitePageView4 = [BHInfiniteScrollView
@@ -104,6 +104,7 @@
     infinitePageView4.pageControlAlignmentH = BHInfiniteScrollViewPageControlAlignHorizontalLeft;
     infinitePageView4.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalCenter;
     infinitePageView4.reverseDirection = YES;
+    infinitePageView4.infiniteLoop = NO;
     [self.view addSubview:infinitePageView4];
     
     

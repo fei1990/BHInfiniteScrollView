@@ -53,8 +53,8 @@
 + (instancetype)infiniteScrollViewWithFrame:(CGRect)frame Delegate:(id<BHInfiniteScrollViewDelegate>)delegate ImagesArray:(NSArray *)images InfiniteLoop:(BOOL)loop {
     BHInfiniteScrollView *infiniteScrollView = [[self alloc] initWithFrame:frame];
     infiniteScrollView.delegate = delegate;
-    infiniteScrollView.infiniteLoop = loop;
     infiniteScrollView.imagesArray = [NSMutableArray arrayWithArray:images];
+    infiniteScrollView.infiniteLoop = loop;
     return infiniteScrollView;
 }
 

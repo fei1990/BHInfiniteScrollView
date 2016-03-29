@@ -83,7 +83,6 @@
     [super layoutSubviews];
     self.flowLayout.itemSize = self.frame.size;
     
-    //[self addSubview:self.pageControl];
     [self setupPageControl];
     [self updatePageControl];
     [self updateTitleView];
@@ -140,21 +139,6 @@
     _dotColor = [UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1];
 }
 
-//- (FXPageControl *)pageControl {
-//    if (!_pageControl) {
-//        _pageControl = [[FXPageControl alloc] init];
-//        _pageControl.numberOfPages = self.imagesArray.count;
-//        _pageControl.selectedDotColor = [UIColor whiteColor];
-//        _pageControl.dotSize = 10;
-//        _pageControl.dotColor = [UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1];
-//        _pageControl.backgroundColor = [UIColor clearColor];
-//        _pageControl.userInteractionEnabled = NO;
-//        _pageControl.hidesForSinglePage = YES;
-//        _pageControl.vertical = _scrollDirection == BHInfiniteScrollViewScrollDirectionVertical ? YES : NO;
-//    }
-//    return _pageControl;
-//    
-//}
 - (void)setupPageControl {
     if (_pageControl) {
         [self.pageControl removeFromSuperview];

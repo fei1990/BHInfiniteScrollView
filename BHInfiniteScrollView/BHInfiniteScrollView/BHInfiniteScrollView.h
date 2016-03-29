@@ -108,8 +108,53 @@ typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
 /** 轮播图片ContentMode - 默认为 UIViewContentModeScaleToFill */
 @property (nonatomic, assign) UIViewContentMode pageViewContentMode;
 
-/** 轮播图点控件 */
-@property (nonatomic, strong) FXPageControl* pageControl;
+
+/**----- PageControl 设置 -----*/
+/** PageControl dot图片 */
+@property (nonatomic, strong) UIImage *dotImage;
+
+/** PageControl 形状 */
+@property (nonatomic, assign) CGPathRef dotShape;
+
+/** PageControl 大小 */
+@property (nonatomic, assign) CGFloat dotSize;
+
+/** PageControl 默认颜色 */
+@property (nonatomic, strong) UIColor *dotColor;
+
+/** PageControl 阴影颜色 */
+@property (nonatomic, strong) UIColor *dotShadowColor;
+
+/** PageControl 阴影模糊 */
+@property (nonatomic, assign) CGFloat dotShadowBlur;
+
+/** PageControl 偏移 */
+@property (nonatomic, assign) CGSize dotShadowOffset;
+
+/** PageControl dot选中图片 */
+@property (nonatomic, strong) UIImage *selectedDotImage;
+
+/** PageControl dot选中形状 */
+@property (nonatomic, assign) CGPathRef selectedDotShape;
+
+/** PageControl dot选中大小 */
+@property (nonatomic, assign) CGFloat selectedDotSize;
+
+/** PageControl dot选中颜色 */
+@property (nonatomic, strong) UIColor *selectedDotColor;
+
+/** PageControl dot选中阴影颜色 */
+@property (nonatomic, strong) UIColor *selectedDotShadowColor;
+
+/** PageControl dot选中阴影模糊 */
+@property (nonatomic, assign) CGFloat selectedDotShadowBlur;
+
+/** PageControl dot选中阴影偏移 */
+@property (nonatomic, assign) CGSize selectedDotShadowOffset;
+
+/** PageControl dot间距 */
+@property (nonatomic, assign) CGFloat dotSpacing;
+
 
 /** 轮播图片点击回调 */
 @property (nonatomic, copy) void (^scrollViewDidSelectBlock)(BHInfiniteScrollView* infiniteScrollView , NSInteger index);

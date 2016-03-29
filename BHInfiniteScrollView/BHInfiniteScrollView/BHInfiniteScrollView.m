@@ -29,6 +29,7 @@
 @property (nonatomic, weak) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, weak) NSTimer *timer;
 
+@property (nonatomic, strong) FXPageControl* pageControl;
 
 @end
 
@@ -64,6 +65,7 @@
         [self initialize];
         [self addSubview:self.collectionView];
         [self addSubview:self.titleView];
+        
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;
@@ -81,7 +83,9 @@
     [super layoutSubviews];
     self.flowLayout.itemSize = self.frame.size;
     
+    //[self addSubview:self.pageControl];
     [self setupPageControl];
+    [self updatePageControl];
     [self updateTitleView];
     
     //scroll to middle postion
@@ -130,8 +134,27 @@
     }else {
         _pageControlAlignmentOffset = CGSizeMake(0, 20);
     }
+    
+    _selectedDotColor = [UIColor whiteColor];
+    _dotSize = 10;
+    _dotColor = [UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1];
 }
 
+//- (FXPageControl *)pageControl {
+//    if (!_pageControl) {
+//        _pageControl = [[FXPageControl alloc] init];
+//        _pageControl.numberOfPages = self.imagesArray.count;
+//        _pageControl.selectedDotColor = [UIColor whiteColor];
+//        _pageControl.dotSize = 10;
+//        _pageControl.dotColor = [UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1];
+//        _pageControl.backgroundColor = [UIColor clearColor];
+//        _pageControl.userInteractionEnabled = NO;
+//        _pageControl.hidesForSinglePage = YES;
+//        _pageControl.vertical = _scrollDirection == BHInfiniteScrollViewScrollDirectionVertical ? YES : NO;
+//    }
+//    return _pageControl;
+//    
+//}
 - (void)setupPageControl {
     if (_pageControl) {
         [self.pageControl removeFromSuperview];
@@ -143,9 +166,9 @@
     
     FXPageControl *pageControl = [[FXPageControl alloc] init];
     pageControl.numberOfPages = self.imagesArray.count;
-    pageControl.selectedDotColor = [UIColor whiteColor];
-    pageControl.dotSize = 10;
-    pageControl.dotColor = [UIColor colorWithRed:170/255.0 green:170/255.0 blue:170/255.0 alpha:1];
+    pageControl.selectedDotColor = _selectedDotColor;
+    pageControl.dotSize = _dotSize;
+    pageControl.dotColor = _dotColor;
     pageControl.backgroundColor = [UIColor clearColor];
     pageControl.userInteractionEnabled = NO;
     pageControl.hidesForSinglePage = YES;
@@ -273,8 +296,142 @@
     }else {
         _totalPageCount = self.imagesArray.count;
     }
-    
 }
+
+#pragma pageControl setting
+
+- (void)setDotImage:(UIImage *)dotImage
+{
+    if (_dotImage != dotImage)
+    {
+        _dotImage = dotImage;
+        self.pageControl.dotImage = dotImage;
+    }
+}
+
+- (void)setDotShape:(CGPathRef)dotShape
+{
+    if (_dotShape != dotShape)
+    {
+        _dotShape = dotShape;
+        self.pageControl.dotShape = dotShape;
+    }
+}
+
+- (void)setDotSize:(CGFloat)dotSize
+{
+    if (ABS(_dotSize - dotSize) > 0.001)
+    {
+        _dotSize = dotSize;
+        self.pageControl.dotSize = dotSize;
+    }
+}
+
+- (void)setDotColor:(UIColor *)dotColor
+{
+    if (_dotColor != dotColor)
+    {
+        _dotColor = dotColor;
+        self.pageControl.dotColor = dotColor;
+    }
+}
+
+- (void)setDotShadowColor:(UIColor *)dotColor
+{
+    if (_dotShadowColor != dotColor)
+    {
+        _dotShadowColor = dotColor;
+        self.pageControl.dotShadowColor = dotColor;
+    }
+}
+
+- (void)setDotShadowBlur:(CGFloat)dotShadowBlur
+{
+    if (ABS(_dotShadowBlur - dotShadowBlur) > 0.001)
+    {
+        _dotShadowBlur = dotShadowBlur;
+        self.pageControl.dotShadowBlur = dotShadowBlur;
+    }
+}
+
+- (void)setDotShadowOffset:(CGSize)dotShadowOffset
+{
+    if (!CGSizeEqualToSize(_dotShadowOffset, dotShadowOffset))
+    {
+        _dotShadowOffset = dotShadowOffset;
+        self.pageControl.dotShadowOffset = dotShadowOffset;
+    }
+}
+
+- (void)setSelectedDotImage:(UIImage *)dotImage
+{
+    if (_selectedDotImage != dotImage)
+    {
+        _selectedDotImage = dotImage;
+        self.pageControl.selectedDotImage = dotImage;
+    }
+}
+
+- (void)setSelectedDotColor:(UIColor *)dotColor
+{
+    if (_selectedDotColor != dotColor)
+    {
+        _selectedDotColor = dotColor;
+        self.pageControl.selectedDotColor = dotColor;
+    }
+}
+
+- (void)setSelectedDotShape:(CGPathRef)dotShape
+{
+    if (_selectedDotShape != dotShape)
+    {
+        _selectedDotShape = dotShape;
+        self.pageControl.selectedDotShape = dotShape;
+    }
+}
+
+- (void)setSelectedDotSize:(CGFloat)dotSize
+{
+    if (ABS(_selectedDotSize - dotSize) > 0.001)
+    {
+        _selectedDotSize = dotSize;
+        self.pageControl.selectedDotSize = dotSize;
+    }
+}
+
+- (void)setSelectedDotShadowColor:(UIColor *)dotColor
+{
+    if (_selectedDotShadowColor != dotColor)
+    {
+        _selectedDotShadowColor = dotColor;
+        self.pageControl.selectedDotShadowColor = dotColor;
+    }
+}
+
+- (void)setSelectedDotShadowBlur:(CGFloat)dotShadowBlur
+{
+    if (ABS(_selectedDotShadowBlur - dotShadowBlur) > 0.001)
+    {
+        _selectedDotShadowBlur = dotShadowBlur;
+        self.pageControl.selectedDotShadowBlur = dotShadowBlur;
+    }
+}
+
+- (void)setSelectedDotShadowOffset:(CGSize)dotShadowOffset
+{
+    if (!CGSizeEqualToSize(_selectedDotShadowOffset, dotShadowOffset))
+    {
+        _selectedDotShadowOffset = dotShadowOffset;
+        self.pageControl.selectedDotShadowOffset = dotShadowOffset;
+    }
+}
+
+- (void)setDotSpacing:(CGFloat)dotSpacing {
+    _dotSpacing = dotSpacing;
+    self.pageControl.dotSpacing = dotSpacing;
+}
+
+
 #pragma mark - timer func
 
 - (void)setupTimer {

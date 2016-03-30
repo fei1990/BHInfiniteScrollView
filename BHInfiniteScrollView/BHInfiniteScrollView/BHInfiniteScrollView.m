@@ -514,6 +514,18 @@
     }
 }
 
+- (void)startAutoScrollPage {
+    if (!self.timer) {
+        [self setupTimer];
+    }
+}
+
+- (void)stopAutoScrollPage {
+    if (self.timer) {
+        [self resetTimer];
+    }
+}
+
 #pragma mark - Property
 
 - (UICollectionView *)collectionView {

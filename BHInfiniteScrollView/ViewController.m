@@ -105,10 +105,15 @@
     infinitePageView4.pageControlAlignmentH = BHInfiniteScrollViewPageControlAlignHorizontalLeft;
     infinitePageView4.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalCenter;
     infinitePageView4.reverseDirection = YES;
-    infinitePageView4.infiniteLoop = NO;
+    infinitePageView4.infiniteLoop = YES;
     [self.view addSubview:infinitePageView4];
+    _infinitePageView = infinitePageView4;
+    [self performSelector:@selector(stop) withObject:nil afterDelay:5];
     
-    
+}
+
+- (void)stop {
+    [_infinitePageView stopAutoScrollPage];
 }
 
 - (void)didReceiveMemoryWarning {

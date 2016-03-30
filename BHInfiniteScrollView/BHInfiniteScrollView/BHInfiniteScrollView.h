@@ -166,5 +166,6 @@ typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
 /** 滚动到指定的页面 */
 - (void)scrollToPageAtIndex:(NSUInteger)pageIndex Animation:(BOOL)animation;
 
-
+- (void)startAutoScrollPage;
+- (void)stopAutoScrollPage;
 @end

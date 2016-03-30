@@ -109,11 +109,16 @@
     [self.view addSubview:infinitePageView4];
     _infinitePageView = infinitePageView4;
     [self performSelector:@selector(stop) withObject:nil afterDelay:5];
-    
+    [self performSelector:@selector(start) withObject:nil afterDelay:10];
+
 }
 
 - (void)stop {
     [_infinitePageView stopAutoScrollPage];
+}
+
+- (void)start {
+    [_infinitePageView startAutoScrollPage];
 }
 
 - (void)didReceiveMemoryWarning {

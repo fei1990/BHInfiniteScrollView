@@ -22,6 +22,7 @@
 
 @interface BHInfiniteScrollView()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
+    BOOL _firstShow;
     NSInteger _multiple;
     NSInteger _totalPageCount;
 }
@@ -83,6 +84,8 @@
     [super layoutSubviews];
     self.flowLayout.itemSize = self.frame.size;
     
+    
+    
     [self setupPageControl];
     [self updatePageControl];
     [self updateTitleView];
@@ -117,6 +120,7 @@
 }
 
 - (void)initialize {
+    _firstShow = NO;
     _multiple = 10000;
     _scrollTimeInterval = 3.2;
     _autoScrollToNextPage = YES;
@@ -608,6 +612,23 @@
     
     if (self.scrollViewDidSelectBlock) {
         self.scrollViewDidSelectBlock(self,self.currentPageIndex);
+    }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (!_firstShow) {
+        if (self.imagesArray.count && self.infiniteLoop) {
+            if (self.scrollDirection == BHInfiniteScrollViewScrollDirectionHorizontal) {
+                CGFloat middlePageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
+                [self.collectionView scrollRectToVisible:CGRectMake(middlePageX,0, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
+            }else {
+                CGFloat middlePageY = _flowLayout.itemSize.height * self.imagesArray.count * _multiple;
+                [self.collectionView scrollRectToVisible:CGRectMake(0, middlePageY, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
+            }
+            
+        }
+        _firstShow = YES;
     }
 }
 

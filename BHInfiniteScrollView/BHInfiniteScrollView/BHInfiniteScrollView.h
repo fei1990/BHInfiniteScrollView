@@ -155,6 +155,9 @@ typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
 /** PageControl dot间距 */
 @property (nonatomic, assign) CGFloat dotSpacing;
 
+/** PageControl 隐藏 */
+@property (nonatomic, assign) BOOL pageControlHidden;
+
 
 /** 轮播图片点击回调 */
 @property (nonatomic, copy) void (^scrollViewDidSelectBlock)(BHInfiniteScrollView* infiniteScrollView , NSInteger index);

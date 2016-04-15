@@ -128,6 +128,7 @@
     _reverseDirection = NO;
     _pageViewContentMode = UIViewContentModeScaleAspectFill;
     _infiniteLoop = YES;
+    _pageControlHidden = NO;
     
     _pageControlAlignmentH =  BHInfiniteScrollViewPageControlAlignHorizontalCenter;
     _pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalButtom;
@@ -161,10 +162,10 @@
     pageControl.userInteractionEnabled = NO;
     pageControl.hidesForSinglePage = YES;
     pageControl.vertical = _scrollDirection == BHInfiniteScrollViewScrollDirectionVertical ? YES : NO;
+    pageControl.hidden = _pageControlHidden;
     [self addSubview:pageControl];
     _pageControl = pageControl;
 
-    
     
     [self updatePageControl];
 
@@ -417,6 +418,11 @@
 - (void)setDotSpacing:(CGFloat)dotSpacing {
     _dotSpacing = dotSpacing;
     self.pageControl.dotSpacing = dotSpacing;
+}
+
+- (void)setPageControlHidden:(BOOL)pageControlHidden {
+    _pageControlHidden = pageControlHidden;
+    self.pageControl.hidden = _pageControlHidden;
 }
 
 

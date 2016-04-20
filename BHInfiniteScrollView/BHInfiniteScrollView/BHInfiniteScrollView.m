@@ -91,18 +91,7 @@
     [self updateTitleView];
     
     //scroll to middle postion
-    if (self.imagesArray.count && self.infiniteLoop) {
-        if (self.scrollDirection == BHInfiniteScrollViewScrollDirectionHorizontal) {
-            CGFloat middlePageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
-            [self.collectionView scrollRectToVisible:CGRectMake(middlePageX,0, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
-        }else {
-            CGFloat middlePageY = _flowLayout.itemSize.height * self.imagesArray.count * _multiple;
-            [self.collectionView scrollRectToVisible:CGRectMake(0, middlePageY, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
-        }
-        
-    }
-    
-    
+    [self scrollToMiddlePosition];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview
@@ -214,7 +203,9 @@
 
     }
 
+    self.pageControl.numberOfPages = self.imagesArray.count;
     self.pageControl.frame = CGRectMake(x, y, size.width, size.height);
+    self.pageControl.currentPage = 0;
 }
 
 - (void)updateTitleView {
@@ -227,6 +218,12 @@
 #pragma mark - setter
 
 - (void)setImagesArray:(NSArray *)imageUrlsArray {
+    
+    if (_timer) {
+        [_timer invalidate];
+        _timer = nil;
+    }
+    
     _imagesArray = imageUrlsArray;
     if (self.infiniteLoop) {
         _totalPageCount = imageUrlsArray.count * _multiple * 2;
@@ -241,6 +238,9 @@
     }else {
         self.collectionView.scrollEnabled = NO;
     }
+    
+    [self scrollToMiddlePosition];
+    [self updatePageControl];
 }
 
 - (void)setScrollDirection:(BHInfiniteScrollViewScrollDirection)scrollDirection {
@@ -624,16 +624,7 @@
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (!_firstShow) {
-        if (self.imagesArray.count && self.infiniteLoop) {
-            if (self.scrollDirection == BHInfiniteScrollViewScrollDirectionHorizontal) {
-                CGFloat middlePageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
-                [self.collectionView scrollRectToVisible:CGRectMake(middlePageX,0, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
-            }else {
-                CGFloat middlePageY = _flowLayout.itemSize.height * self.imagesArray.count * _multiple;
-                [self.collectionView scrollRectToVisible:CGRectMake(0, middlePageY, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
-            }
-            
-        }
+        [self scrollToMiddlePosition];
         _firstShow = YES;
     }
 }
@@ -681,6 +672,20 @@
         self.titleView.titleText = self.titlesArray[self.currentPageIndex];
     }
     
+}
+
+
+- (void)scrollToMiddlePosition {
+    if (self.imagesArray.count && self.infiniteLoop) {
+        if (self.scrollDirection == BHInfiniteScrollViewScrollDirectionHorizontal) {
+            CGFloat middlePageX = _flowLayout.itemSize.width * self.imagesArray.count * _multiple;
+            [self.collectionView scrollRectToVisible:CGRectMake(middlePageX,0, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
+        }else {
+            CGFloat middlePageY = _flowLayout.itemSize.height * self.imagesArray.count * _multiple;
+            [self.collectionView scrollRectToVisible:CGRectMake(0, middlePageY, _flowLayout.itemSize.width, _flowLayout.itemSize.height) animated:NO];
+        }
+        
+    }
 }
 
 @end

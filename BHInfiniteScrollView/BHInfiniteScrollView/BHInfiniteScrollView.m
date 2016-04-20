@@ -239,6 +239,7 @@
         self.collectionView.scrollEnabled = NO;
     }
     
+    [self.collectionView reloadData];
     [self scrollToMiddlePosition];
     [self updatePageControl];
 }

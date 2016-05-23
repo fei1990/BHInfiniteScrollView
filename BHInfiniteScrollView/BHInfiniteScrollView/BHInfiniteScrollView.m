@@ -598,7 +598,7 @@
         NSInteger index = indexPath.row % self.imagesArray.count;
         NSObject* object = [self.imagesArray objectAtIndex:index];
         if ([object isKindOfClass:[NSString class]]) {
-            if ([(NSString*)object hasPrefix:@"http://"]) {
+            if ([(NSString*)object hasPrefix:@"http"]) {
                 [cell setupWithUrlString:(NSString*)object placeholderImage:self.placeholderImage];
             }else {
                 [cell setupWithImageName:(NSString*)object placeholderImage:self.placeholderImage];
@@ -624,10 +624,14 @@
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (!_firstShow) {
-        [self scrollToMiddlePosition];
-        _firstShow = YES;
-    }
+//    if (!_firstShow) {
+//        [self scrollToMiddlePosition];
+//        _firstShow = YES;
+//    }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 #pragma mark - UIScrollViewDelegate

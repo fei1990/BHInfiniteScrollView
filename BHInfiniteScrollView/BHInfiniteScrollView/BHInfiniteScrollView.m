@@ -85,7 +85,6 @@
     self.flowLayout.itemSize = self.frame.size;
     
     
-    
     [self setupPageControl];
     [self updatePageControl];
     [self updateTitleView];
@@ -625,10 +624,10 @@
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if (!_firstShow) {
-//        [self scrollToMiddlePosition];
-//        _firstShow = YES;
-//    }
+    if (!_firstShow) {
+        [self scrollToMiddlePosition];
+        _firstShow = YES;
+    }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {

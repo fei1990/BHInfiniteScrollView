@@ -86,7 +86,6 @@
     
     
     [self setupPageControl];
-    [self updatePageControl];
     [self updateTitleView];
     
     //scroll to middle postion
@@ -240,7 +239,7 @@
     
     [self.collectionView reloadData];
     [self scrollToMiddlePosition];
-    [self updatePageControl];
+    [self setupPageControl];
 }
 
 - (void)setScrollDirection:(BHInfiniteScrollViewScrollDirection)scrollDirection {

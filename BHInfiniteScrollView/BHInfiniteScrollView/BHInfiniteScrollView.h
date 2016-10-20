@@ -174,4 +174,9 @@ typedef NS_ENUM(NSInteger, BHInfiniteScrollViewPageControlAlignVertical) {
 
 /** 停止自动滚动 */
 - (void)stopAutoScrollPage;
+
+/** 手动刷新Page Control */
+- (void)updatePageControl;
+
+
 @end

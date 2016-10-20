@@ -74,6 +74,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initialize];
     [self addSubview:self.collectionView];
     [self addSubview:self.titleView];

@@ -56,7 +56,7 @@
     BHInfiniteScrollView* infinitePageView1 = [BHInfiniteScrollView
                                               infiniteScrollViewWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), viewHeight) Delegate:self ImagesArray:urlsArray];
     infinitePageView1.titlesArray = titlesArray;
-    infinitePageView1.dotSize = 10;
+    infinitePageView1.dotSize = 20;
     infinitePageView1.pageControlAlignmentOffset = CGSizeMake(0, 20);
     infinitePageView1.titleView.textColor = [UIColor whiteColor];
     infinitePageView1.titleView.margin = 30;
@@ -64,8 +64,9 @@
     infinitePageView1.scrollTimeInterval = 2;
     infinitePageView1.autoScrollToNextPage = YES;
     infinitePageView1.delegate = self;
+    infinitePageView1.dotSpacing = 20;
+    [infinitePageView1 updatePageControl];
     [self.view addSubview:infinitePageView1];
-    
     
     
     BHInfiniteScrollView* infinitePageView2 = [BHInfiniteScrollView
@@ -107,7 +108,8 @@
     infinitePageView4.reverseDirection = YES;
     infinitePageView4.infiniteLoop = YES;
     [self.view addSubview:infinitePageView4];
-    _infinitePageView = infinitePageView4;
+    
+    _infinitePageView = infinitePageView1;
     [self performSelector:@selector(stop) withObject:nil afterDelay:5];
     [self performSelector:@selector(start) withObject:nil afterDelay:10];
 

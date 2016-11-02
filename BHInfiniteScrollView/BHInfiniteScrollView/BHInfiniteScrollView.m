@@ -205,6 +205,24 @@
     self.pageControl.numberOfPages = self.imagesArray.count;
     self.pageControl.frame = CGRectMake(x, y, size.width, size.height);
     self.pageControl.currentPage = 0;
+    self.pageControl.dotSpacing = self.dotSpacing;
+    self.pageControl.dotImage = self.dotImage;
+    self.pageControl.dotShape = self.dotShape;
+    self.pageControl.dotSize = self.dotSize;
+    self.pageControl.dotColor = self.dotColor;
+    self.pageControl.dotShadowColor = self.dotShadowColor;
+    self.pageControl.dotShadowBlur = self.dotShadowBlur;
+    self.pageControl.dotShadowOffset = self.dotShadowOffset;
+    self.pageControl.selectedDotImage = self.selectedDotImage;
+    self.pageControl.selectedDotShape = self.selectedDotShape;
+    self.pageControl.selectedDotSize = self.selectedDotSize;
+    self.pageControl.selectedDotColor = self.selectedDotColor;
+    self.pageControl.selectedDotShadowColor = self.selectedDotShadowColor;
+    self.pageControl.selectedDotShadowBlur = self.selectedDotShadowBlur;
+    self.pageControl.selectedDotShadowOffset = self.selectedDotShadowOffset;
+    
+    [self.pageControl updateCurrentPageDisplay];
+    
 }
 
 - (void)updateTitleView {

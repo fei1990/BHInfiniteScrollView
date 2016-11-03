@@ -163,47 +163,7 @@
     if (!self.imagesArray.count) {
         return;
     }
-    
-    CGSize size = [self.pageControl sizeForNumberOfPages:self.imagesArray.count];
-    
-    if (self.scrollDirection == BHInfiniteScrollViewScrollDirectionHorizontal) {
-        size = CGSizeMake(size.width * 1.1, size.height);
-    }else {
-        size = CGSizeMake(size.width, size.height * 1.1);
-    }
-    
-    CGFloat x = 0.0, y = 0.0;
-    
-    if (self.pageControlAlignmentH == BHInfiniteScrollViewPageControlAlignHorizontalRight) {
-
-        x = CGRectGetWidth(self.frame) - size.width - self.pageControlAlignmentOffset.width;
-
-    }else if (self.pageControlAlignmentH == BHInfiniteScrollViewPageControlAlignHorizontalCenter) {
-
-        x = CGRectGetWidth(self.frame) * 0.5 - size.width*0.5;
-
-    }else if (self.pageControlAlignmentH == BHInfiniteScrollViewPageControlAlignHorizontalLeft) {
-
-        x = self.pageControlAlignmentOffset.width;
-
-    }
-
-    if (self.pageControlAlignmentV == BHInfiniteScrollViewPageControlAlignVerticalButtom) {
-
-        y = CGRectGetHeight(self.frame) - size.height - self.pageControlAlignmentOffset.height;
-
-    }else if (self.pageControlAlignmentV == BHInfiniteScrollViewPageControlAlignVerticalTop) {
-
-        y = self.pageControlAlignmentOffset.height;
-
-    }else if (self.pageControlAlignmentV == BHInfiniteScrollViewPageControlAlignVerticalCenter) {
-
-        y = CGRectGetHeight(self.frame)*0.5 - size.height*0.5;
-
-    }
-
     self.pageControl.numberOfPages = self.imagesArray.count;
-    self.pageControl.frame = CGRectMake(x, y, size.width, size.height);
     self.pageControl.currentPage = 0;
     self.pageControl.dotSpacing = self.dotSpacing;
     self.pageControl.dotImage = self.dotImage;
@@ -221,6 +181,45 @@
     self.pageControl.selectedDotShadowBlur = self.selectedDotShadowBlur;
     self.pageControl.selectedDotShadowOffset = self.selectedDotShadowOffset;
     
+    CGSize size = [self.pageControl sizeForNumberOfPages:self.imagesArray.count];
+    
+    if (self.scrollDirection == BHInfiniteScrollViewScrollDirectionHorizontal) {
+        size = CGSizeMake(size.width * 1.1, size.height);
+    }else {
+        size = CGSizeMake(size.width, size.height * 1.1);
+    }
+    
+    CGFloat x = 0.0, y = 0.0;
+    
+    if (self.pageControlAlignmentH == BHInfiniteScrollViewPageControlAlignHorizontalRight) {
+        
+        x = CGRectGetWidth(self.frame) - size.width - self.pageControlAlignmentOffset.width;
+        
+    }else if (self.pageControlAlignmentH == BHInfiniteScrollViewPageControlAlignHorizontalCenter) {
+        
+        x = CGRectGetWidth(self.frame) * 0.5 - size.width*0.5;
+        
+    }else if (self.pageControlAlignmentH == BHInfiniteScrollViewPageControlAlignHorizontalLeft) {
+        
+        x = self.pageControlAlignmentOffset.width;
+        
+    }
+    
+    if (self.pageControlAlignmentV == BHInfiniteScrollViewPageControlAlignVerticalButtom) {
+        
+        y = CGRectGetHeight(self.frame) - size.height - self.pageControlAlignmentOffset.height;
+        
+    }else if (self.pageControlAlignmentV == BHInfiniteScrollViewPageControlAlignVerticalTop) {
+        
+        y = self.pageControlAlignmentOffset.height;
+        
+    }else if (self.pageControlAlignmentV == BHInfiniteScrollViewPageControlAlignVerticalCenter) {
+        
+        y = CGRectGetHeight(self.frame)*0.5 - size.height*0.5;
+        
+    }
+    
+    self.pageControl.frame = CGRectMake(x, y, size.width, size.height);
     [self.pageControl updateCurrentPageDisplay];
     
 }

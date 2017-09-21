@@ -74,6 +74,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initialize];
     [self addSubview:self.collectionView];
     [self addSubview:self.titleView];
@@ -215,23 +216,38 @@
 
 #pragma mark - setter
 - (void)setPlaceholderImage:(UIImage *)placeholderImage {
-    _placeholderImage = placeholderImage;
-    if (self.imagesArray.count == 0 && _placeholderImage) {
+    if (!placeholderImage) {
+        _placeholderImage = [UIImage new];
+    }else {
+        _placeholderImage = placeholderImage;
+    }
+    if ((self.imagesArray.count == 0 && _placeholderImage) || self.imagesArray == nil) {
         self.imagesArray = @[placeholderImage];
     }
 }
+
 - (void)setImagesArray:(NSArray *)imageUrlsArray {
+    
+    if (imageUrlsArray == nil || imageUrlsArray.count == 0) {
+        if (self.placeholderImage) {
+            _imagesArray = @[self.placeholderImage];
+        }else {
+            _imagesArray = @[[UIImage new]];
+        }
+    }else {
+        _imagesArray = imageUrlsArray;
+    }
     
     if (_timer) {
         [_timer invalidate];
         _timer = nil;
     }
     
-    _imagesArray = imageUrlsArray;
+    
     if (self.infiniteLoop) {
-        _totalPageCount = imageUrlsArray.count * _multiple * 2;
+        _totalPageCount = _imagesArray.count * _multiple * 2;
     }else {
-        _totalPageCount = imageUrlsArray.count;
+        _totalPageCount = _imagesArray.count;
     }
     
     if (imageUrlsArray.count > 1) {

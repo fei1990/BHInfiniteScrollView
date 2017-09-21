@@ -64,9 +64,10 @@
     infinitePageView1.scrollTimeInterval = 2;
     infinitePageView1.autoScrollToNextPage = YES;
     infinitePageView1.delegate = self;
+    infinitePageView1.placeholderImage = [UIImage imageNamed:@"placeholder"];
     [self.view addSubview:infinitePageView1];
     
-    
+    infinitePageView1.imagesArray = nil;
     
     BHInfiniteScrollView* infinitePageView2 = [BHInfiniteScrollView
                                                infiniteScrollViewWithFrame:CGRectMake(0, viewHeight, CGRectGetWidth(self.view.frame), viewHeight) Delegate:self ImagesArray:urlsArray];
@@ -79,6 +80,7 @@
     infinitePageView2.pageControlAlignmentH = BHInfiniteScrollViewPageControlAlignHorizontalRight;
     infinitePageView2.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalButtom;
     infinitePageView2.reverseDirection = YES;
+    infinitePageView2.placeholderImage = [UIImage imageNamed:@"placeholder"];
     [self.view addSubview:infinitePageView2];
     
     BHInfiniteScrollView* infinitePageView3 = [BHInfiniteScrollView
@@ -91,6 +93,7 @@
     infinitePageView3.pageControlAlignmentH = BHInfiniteScrollViewPageControlAlignHorizontalRight;
     infinitePageView3.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalButtom;
     infinitePageView3.reverseDirection = NO;
+    infinitePageView3.placeholderImage = [UIImage imageNamed:@"placeholder"];
     [self.view addSubview:infinitePageView3];
     
     
@@ -106,6 +109,7 @@
     infinitePageView4.pageControlAlignmentV = BHInfiniteScrollViewPageControlAlignVerticalCenter;
     infinitePageView4.reverseDirection = YES;
     infinitePageView4.infiniteLoop = YES;
+    infinitePageView4.placeholderImage = [UIImage imageNamed:@"placeholder"];
     [self.view addSubview:infinitePageView4];
     _infinitePageView = infinitePageView4;
     [self performSelector:@selector(stop) withObject:nil afterDelay:5];

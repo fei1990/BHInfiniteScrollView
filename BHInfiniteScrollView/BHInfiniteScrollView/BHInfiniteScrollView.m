@@ -214,7 +214,12 @@
 }
 
 #pragma mark - setter
-
+- (void)setPlaceholderImage:(UIImage *)placeholderImage {
+    _placeholderImage = placeholderImage;
+    if (self.imagesArray.count == 0 && _placeholderImage) {
+        self.imagesArray = @[placeholderImage];
+    }
+}
 - (void)setImagesArray:(NSArray *)imageUrlsArray {
     
     if (_timer) {
